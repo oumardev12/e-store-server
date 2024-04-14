@@ -10,7 +10,7 @@ dotEnv.config({ debug: true });
 const PORT = process.env.PORT;
 const app = express();
 app.use(cors({
-    origin: ["http://localhost:5173", "http://localhost:4173"],
+    origin: ["http://localhost:5173", "http://localhost:4173", "https://e-store-com.netlify.app"],
     credentials: true,
 }));
 app.use(helmet());
