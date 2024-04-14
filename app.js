@@ -21,7 +21,7 @@ app.use(morgan("dev"));
 app.listen(PORT, () => console.log(`[*] server started on port ${PORT}`));
 app.use((req, res, next) => route(req, res, next));
 app.use((_, res) => res.status(404).json({ message: "page not found 😧" }));
-/*mongoose.set("strictQuery", false);
+mongoose.set("strictQuery", false);
 mongoose.connect(process.env.DATABASE_URL, {});
 const db = mongoose.connection;
 db.on("error", (err) => {
@@ -29,4 +29,4 @@ db.on("error", (err) => {
 });
 db.on("open", () => {
     console.log("[*] connected to database");
-});*/
+});
