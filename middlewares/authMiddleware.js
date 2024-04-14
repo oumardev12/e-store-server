@@ -1,8 +1,8 @@
-import { verify } from "jsonwebtoken";
+import jtoken from "jsonwebtoken";
 const authVerification = (req, res, next) => {
     const jwt = req.cookies.jwt_session;
     try {
-        const isVerified = verify(jwt, process.env.TOKEN_SECRET);
+        const isVerified = jtoken.verify(jwt, process.env.TOKEN_SECRET);
         if (!isVerified)
             throw new Error();
         next();
